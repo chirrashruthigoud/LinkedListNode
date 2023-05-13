@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinkedList2
 {
-    internal class LinkedLists
+    public class LinkedList
     {
         public Node head;//empty node
         public void Add(int data)
@@ -26,6 +26,63 @@ namespace LinkedList2
                 temp.next = node;
             }
             Console.WriteLine("{0} Linkedlist", node.data);
+        }
+        public void AddInReverseOrder(int data)
+        {
+            Node newNode=new Node(data);
+            if(this.head == null)
+            {
+                this.head= newNode;
+            }
+            else
+            {
+                Node temp = head;
+                head = newNode;
+                head.next= temp;
+            }
+            Console.WriteLine("{0} added in reverse order in linkedlist",newNode.data);
+        }
+        //remove first node.
+        public void Removeatfirst()
+        {
+            if(head == null)
+            {
+                Console.WriteLine("linkedlist is empty");
+            }
+            this.head=this.head.next;
+            Console.WriteLine("First element deleted.");
+        }
+        //remove last node.
+        public void RemoveLast()
+        {
+            if(head == null)
+            {
+                Console.WriteLine("liked list is empty");
+            }
+           if(head.next==null)
+            {
+                head = null;
+            }
+           Node lastnode=this.head;
+            while(lastnode.next.next!=null)
+            {
+                lastnode=lastnode.next;
+            }
+            lastnode.next=null;
+        }
+        //display.
+        public void ToDisplay()
+        {
+            Node temp = head;
+           if(temp==null)
+            {
+                Console.WriteLine("linked list is empty");
+            }
+           while(temp!=null)
+            {
+                Console.WriteLine(temp.data);
+                temp = temp.next;
+            }
         }
     }
 }
