@@ -39,6 +39,8 @@ namespace LinkedList2
             list.RemoveLast();
             list.ToDisplay();
 
+            list.Size();
+
             Console.ReadLine();
         }
     }
