@@ -53,7 +53,7 @@ namespace LinkedList2
             Console.WriteLine("First element deleted.");
         }
         //remove last node.
-       /* public void RemoveLast()
+        public void RemoveLast()
         {
             if(head == null)
             {
@@ -70,7 +70,7 @@ namespace LinkedList2
             }
             lastnode.next=null;
             Console.WriteLine("linked list remove last.");
-        }*/
+        }
 
         public void Size()
         {
